@@ -1,12 +1,9 @@
 package main
 
 import (
-	_ "goblog/routers"
-
-	//"goblog/controllers"
-	"goblog/models"
-
 	"log"
+
+	"github.com/cnfinder/goblog/models"
 
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/orm"
@@ -26,8 +23,8 @@ func main() {
 	// 开启 ORM 调试模式
 
 	orm.Debug = true
-	// 自动建表
-	orm.RunSyncdb("default", true, true)
+	// 自动建表  默认的数据库 而不是default数据库
+	orm.RunSyncdb("default", false, true)
 
 	beego.Run(":8888")
 
