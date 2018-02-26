@@ -86,10 +86,58 @@
       <a href="http://{{.Website}}">{{.Website}}</a> /
       Contact me:
       <a class="email" href="mailto:{{.Email}}">{{.Email}}</a>
+	  ------
+	
+	
+	  {{.A}}
+		{{.user.Name}}
+			{{if .condition }}
+				年龄大于10
+			{{else}}
+				年龄小于10
+			{{end}}	
+			
+		---------------<br/>
+	
+			{{.arr}}
+			
+			<div>
+	
+			{{range .arr}}
+					{{.}}
+				{{end}}
+		</div>
+		
+		<div>
+			{{with .user}}
+				{{.UserName}};{{.UserId}}
+			{{end}}
+		
+		</div>
+		
+		<div>
+			{{$vA := .A}}
+			{{$vA}}
+		</div>
+		
+		<div>
+			{{str2html .html}}
+		</div>
+		
+		{{template "test"}}
     </div>
+	
+	
+	
   </footer>
   <div class="backdrop"></div>
 
   <script src="/static/js/reload.min.js"></script>
 </body>
 </html>
+
+{{define "test"}}
+	<div style="color:#ff0000">
+		this is template
+	</div>
+{{end}}
