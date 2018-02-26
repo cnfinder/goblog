@@ -16,8 +16,8 @@ type User struct {
 }
 
 func (c *MainController) Get() {
-	c.Data["Website"] = "beego.me"
-	c.Data["Email"] = "astaxie@gmail.com"
+	c.Data["Website"] = "goblog"
+	c.Data["Email"] = "171721626@qq.com"
 	c.TplName = "index.tpl"
 	c.Data["A"] = "a"
 

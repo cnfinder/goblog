@@ -2,9 +2,13 @@ package routers
 
 import (
 	"goblog/controllers"
+
 	"github.com/astaxie/beego"
 )
 
 func init() {
-    beego.Router("/", &controllers.MainController{})
+	// 注册 beego 路由
+	beego.Router("/", &controllers.MainController{})
+
+	beego.Router("/home", &controllers.HomeController{})
 }
